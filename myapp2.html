@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, accusamus autem, nisi voluptates dicta quis vitae ut iste accusantium natus, laborum nesciunt cum iure id! Molestiae iure ex quasi ad?</p>
+    </div>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, accusamus autem, nisi voluptates dicta quis vitae ut iste accusantium natus, laborum nesciunt cum iure id! Molestiae iure ex quasi ad?</p>
+    </div>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, accusamus autem, nisi voluptates dicta quis vitae ut iste accusantium natus, laborum nesciunt cum iure id! Molestiae iure ex quasi ad?</p>
+    </div>
+    <div id="idcontainer">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, accusamus autem, nisi voluptates dicta quis vitae ut iste accusantium natus, laborum nesciunt cum iure id! Molestiae iure ex quasi ad?</p>
+    </div>
+    <button onclick="fun()">click on</button>
+    <script>
+        function fun(){
+            let idcontainer=document.getElementById("idcontainer")
+            let classcontainer=document.getElementsByClassName("container");
+            console.log(idcontainer)
+            classcontainer[0].style.background="red"
+            classcontainer[2].style.background="green"
+
+            let divtag=document.getElementsByTagName("div");
+            console.log(divtag)
+        }
+    </script>
+</body>
+</html>

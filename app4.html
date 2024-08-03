@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let BakeryDetails={
+                shape:['three tier','two tier','barbie','christmas'],
+                cakelist:["red welvet","vannila","chocolate","belgium chocolate"],
+                ingrediants:['strawberry','vannila essense','black chocolate','white chocolate'],
+                statusis:['in progress','completed','started','waiting']
+            
+
+             }
+             let deliverystatus=true;
+        let fetchData=()=>{
+
+          return new Promise((resolve,reject)=>{
+              if(deliverystatus){
+                resolve("The order is delvered..");
+              }
+              else{
+                reject("packed..");
+              }
+            })
+        }
+        fetchData().then(()=>{
+
+            setTimeout(()=>{
+                document.writeln("<h1>Your order is received</h1>")
+            },2000)
+           }).then(()=>{
+            setTimeout(()=>{
+                document.writeln("<h1>Your order is packed</h1>")
+            },4000)
+            }).then(()=>{
+            setTimeout(()=>{
+                document.writeln("<h1>Your order is out for delivery</h1>")
+            },6000)
+        }).then(()=>{
+                setTimeout(()=>{
+                    document.writeln(`<h1>${BakeryDetails.shape[0]} design  ${BakeryDetails.cakelist[0]} cake using  ${BakeryDetails.ingrediants[0]}  order was ${BakeryDetails.statusis[0]}</h1>`)
+                },6000)
+            }).then(()=>{
+                setTimeout(()=>{
+                    document.writeln(`<h1>${BakeryDetails.shape[1]} design  ${BakeryDetails.cakelist[1]} cake using ${BakeryDetails.ingrediants[1]}  order was ${BakeryDetails.statusis[1]}</h1>`)
+                },6000)
+            }).then(()=>{
+                setTimeout(()=>{
+                    document.writeln(`<h1>${BakeryDetails.shape[2]} design  ${BakeryDetails.cakelist[2]} cake using ${BakeryDetails.ingrediants[2,3]} corder was ${BakeryDetails.statusis[2]}</h1>`)
+                //},6000)
+                },6000)
+            }).then(()=>{
+                setTimeout(()=>{
+                    document.writeln("<h1>Your order has been delivered</h1>")
+                },8000)
+            }).catch(()=>{
+                setTimeout(()=>{
+                    document.writeln("<h1>Today is sunday shop is closed</h1>")
+                },2000)
+            }).finally(()=>{
+                setTimeout(()=>{
+                    document.writeln("<h1>The shop is closed</h1>")
+                },10000)
+            })
+    </script>
+</body>
+</html>
+
+    </script>
+</body>
+</html>

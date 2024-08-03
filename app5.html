@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let asyncfun=()=>{
+            return new Promise((resolve,reject)=>{
+                if(true){
+                    resolve("resolve is execute...")
+                }
+            })
+        }
+        async function preparedata(){
+            try{
+                await asyncfun().then(()=>{
+                    setTimeout(()=>{
+                        document.writeln("<h1>async and await</h1>")
+                    },2000)
+                });
+            }
+            catch(Error){
+                document.writeln("<h1>"+Error+"</h1>")
+            }
+            finally{
+                document.writeln("finally is printing...")
+            }
+        }
+        preparedata().then(()=>{
+            setTimeout(()=>{
+                document.writeln("I am last")
+            },4000)
+        })
+
+        let fetchApi=fetch("./url")
+        console.log(fetchApi)
+    </script>
+</body>
+</html>

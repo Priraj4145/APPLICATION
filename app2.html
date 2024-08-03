@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.writeln("<h1> The Content is loading...")
+            let time;
+
+            function empcheckin(){
+                console.log("Employee checkin")
+            }
+            function empworkstatus(callbackfun){
+                callbackfun();
+                console.log("The Employee start to work")
+                new Promise(resolve,reject).then().catch().finally();
+                
+            }
+            empworkstatus(empcheckin);
+
+
+
+
+            /*try{
+                let i=0;
+                let values=100/0
+                console.log("try block")
+                //error
+            }
+            catch(Error){
+                console.log("catch block:"+Error)
+            }
+            finally{
+                console.log("final block")
+            }*/
+    </script>
+</body>
+</html>

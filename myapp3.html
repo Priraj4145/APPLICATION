@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   .header{
+    width:30%;
+    background-color:rgb(47,127,232);
+    padding:2%;
+    margin:2%;
+    border-radius:6px;
+   } 
+</style>
+<body>
+    <input type="text" name="firstname" id="fname" value="ram"/>
+    <div id="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsam similique quibusdam fugit quos veniam ducimus rem labore aut, nesciunt veritatis voluptate ratione repudiandae molestiae magni debitis hic saepe enim!</p>
+    </div>
+    <button onclick="fun()">change style</button>
+    <button onclick="hide()">hide</button>
+    <script>
+       let fun=()=>{
+        let inputType=document.getElementById("container");
+        inputType.setAttribute("class","header");
+        inputType.style.background="green"
+       }
+       let hide=()=>{
+        let inputType=document.getElementById("container");
+        inputType.style.display="none";
+       }
+    </script>
+</body>
+</html>

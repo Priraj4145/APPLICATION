@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    /* Internal CSS for styling the form and thank you message */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    #registrationContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    #registrationForm {
+      max-width: 700px;
+      width: 100%;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #ffffff;
+      box-shadow: 0 6px 12px rgba(122, 85, 110, 0.452);
+      margin: 0 auto;
+    }
+
+    #registrationForm h2 {
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 28px;
+    }
+
+    #registrationForm input {
+      display: block;
+      width: calc(100% - 20px);
+      margin: 15px auto;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    #registrationForm input[type="submit"] {
+      background-color: rgb(136, 25, 136);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    #registrationForm input[type="submit"]:hover {
+      background-color: rgb(110, 15, 110);
+    }
+
+    #thankYouMessage {
+      display: none; /* Hidden by default */
+      padding: 20px;
+      margin: 20px;
+      border: 1px solid #4CAF50;
+      border-radius: 8px;
+      background-color: #e8f5e9;
+      color: #4CAF50;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      #registrationForm {
+        padding: 25px;
+      }
+
+      #registrationForm input {
+        padding: 10px;
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #registrationForm {
+        padding: 20px;
+      }
+
+      #registrationForm input {
+        padding: 8px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Create a container for the form and title
+      const container = document.createElement('div');
+      container.id = 'registrationContainer';
+
+      // Create a title element
+      const title = document.createElement('h2');
+      title.textContent = 'Registration Form';
+
+      // Create the form element
+      const form = document.createElement('form');
+      form.id = 'registrationForm';
+
+      // Create and append form fields
+      const fields = [
+        { type: 'text', id: 'username', placeholder: 'Username' },
+        { type: 'email', id: 'email', placeholder: 'Email' },
+        { type: 'password', id: 'password', placeholder: 'Password' },
+        { type: 'password', id: 'confirmPassword', placeholder: 'Confirm Password' },
+        { type: 'submit', value: 'Register' }
+      ];
+
+      fields.forEach(field => {
+        const input = document.createElement('input');
+        input.type = field.type;
+        input.id = field.id;
+        input.placeholder = field.placeholder || '';
+        if (field.type === 'submit') {
+          input.value = field.value;
+        }
+        form.appendChild(input);
+      });
+
+      // Create and append the thank you message
+      const thankYouMessage = document.createElement('div');
+      thankYouMessage.id = 'thankYouMessage';
+      thankYouMessage.textContent = 'Thank you for registering!';
+
+      // Append the form and title to the container
+      container.appendChild(title);
+      container.appendChild(form);
+      container.appendChild(thankYouMessage);
+
+      // Append the container to the body
+      document.body.appendChild(container);
+
+      // Handle form submission
+      form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the form from submitting normally
+        form.style.display = 'none'; // Hide the form
+        thankYouMessage.style.display = 'block'; // Show the thank you message
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.writeln("<h1> The content is loading..")
+            let getData=()=>{
+                console.log("Arrow function")
+                setTimeout(()=>{
+                    document.writeln("<h1>It will execute after some times</h1>")
+                },20000)
+            }
+
+            let fun1=()=>{
+            setInterval(()=>{
+                document.writeln("<h1> keep on executing...</h1>")
+            },5000)
+        }
+            getData();
+            fun1();
+    </script>
+</body>
+</html>
